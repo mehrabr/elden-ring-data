@@ -35,10 +35,12 @@ CREATE OR REPLACE TABLE "consumable_atk" AS FROM read_parquet('https://raw.githu
 CREATE OR REPLACE TABLE "dmg_level" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/dmg_level.parquet');
 CREATE OR REPLACE TABLE "dmg_types" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/dmg_types.parquet');
 CREATE OR REPLACE TABLE "enemies" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/enemies.parquet');
+CREATE OR REPLACE TABLE "enemy_ng" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/enemy_ng.parquet');
 CREATE OR REPLACE TABLE "equip_load" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/equip_load.parquet');
 CREATE OR REPLACE TABLE "frames" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/frames.parquet');
 CREATE OR REPLACE TABLE "guard_buffs" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/guard_buffs.parquet');
 CREATE OR REPLACE TABLE "moveset_proxies" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/moveset_proxies.parquet');
+CREATE OR REPLACE TABLE "ng_cycle" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/ng_cycle.parquet');
 CREATE OR REPLACE TABLE "reg_aec" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_aec.parquet');
 CREATE OR REPLACE TABLE "reg_base_attack" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_base_attack.parquet');
 CREATE OR REPLACE TABLE "reg_scaling" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_scaling.parquet');

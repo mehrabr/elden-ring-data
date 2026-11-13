@@ -3,7 +3,7 @@
 Game-data tables and SQL macros for Elden Ring PvE build theorycrafting: weapon attack rating, motion values,
 frame data, stance (poise) damage, status buildup, enemy defenses and thresholds, spells, Ashes of War, buffs, armor.
 
-- `data/*.parquet`: 62 tables (zstd Parquet, ~2 MB total)
+- `data/*.parquet`: 64 tables (zstd Parquet, ~2 MB total)
 - `sql/schema.sql`: 39 macros and 2 views (`ar`, `catalyst_scaling`, `enemy_hit_damage`, `hits_for_procs`, `enemy_threshold`, `class_rl`, …), in dependency order
 - `sql/schema_elden_ring_qualified.sql`: the same macros with every table and macro call qualified as `elden_ring.main.*`, so they work from any default database (needed for MotherDuck Dives)
 - `sql/load_motherduck.sql`: builds the tables in MotherDuck straight from this repo's raw URLs
@@ -30,6 +30,7 @@ SELECT * FROM ar('Keen Uchigatana', 18, 50, 9, 9, 9, 25, true);
 | Weapon motion values, frames (30 fps), status/poise/stamina MVs | 1.16.1 | community MV workbook (cryptidtracker) |
 | Bullets, other SpEffects | 1.12 | [garyttierney/elden-ring-param-archive](https://github.com/garyttierney/elden-ring-param-archive) |
 | `bosses` (26 bosses) | community | Community DPS Calc spreadsheet |
+| NG+ scaling (`enemy_ng`, `ng_cycle`) | 1.12 | regulation SpEffectParam (area + 400 rows) and ClearCountCorrectParam |
 
 `ar()` and `catalyst_scaling()` match an independent engine ([Raed-Jani/soulslike-build-planner](https://github.com/Raed-Jani/soulslike-build-planner))
 with 0 mismatches over thousands of damage, status and spell-scaling checks. That verifies the math against community calculators, not against the game.
