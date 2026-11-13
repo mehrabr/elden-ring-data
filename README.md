@@ -5,6 +5,7 @@ frame data, stance (poise) damage, status buildup, enemy defenses and thresholds
 
 - `data/*.parquet`: 62 tables (zstd Parquet, ~2 MB total)
 - `sql/schema.sql`: 39 macros and 2 views (`ar`, `catalyst_scaling`, `enemy_hit_damage`, `hits_for_procs`, `enemy_threshold`, `class_rl`, …), in dependency order
+- `sql/schema_elden_ring_qualified.sql`: the same macros with every table and macro call qualified as `elden_ring.main.*`, so they work from any default database (needed for MotherDuck Dives)
 - `sql/load_motherduck.sql`: builds the tables in MotherDuck straight from this repo's raw URLs
 
 Exported from a private working database; regenerated with `scripts/export_public_data.py` there.
