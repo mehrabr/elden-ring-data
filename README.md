@@ -3,7 +3,7 @@
 Game-data tables and SQL macros for Elden Ring PvE build theorycrafting: weapon attack rating, motion values,
 frame data, stance (poise) damage, status buildup, enemy defenses and thresholds, spells, Ashes of War, buffs, armor.
 
-- `data/*.parquet`: 65 tables (zstd Parquet, ~2 MB total)
+- `data/*.parquet`: 67 tables (zstd Parquet, ~2 MB total)
 - `sql/schema.sql`: 39 macros and 2 views (`ar`, `catalyst_scaling`, `enemy_hit_damage`, `hits_for_procs`, `enemy_threshold`, `class_rl`, …), in dependency order
 - `sql/schema_elden_ring_qualified.sql`: the same macros with every table and macro call qualified as `elden_ring.main.*`, so they work from any default database (needed for MotherDuck Dives)
 - `sql/load_motherduck.sql`: builds the tables in MotherDuck straight from this repo's raw URLs
@@ -31,6 +31,7 @@ SELECT * FROM ar('Keen Uchigatana', 18, 50, 9, 9, 9, 25, true);
 | Bullets, other SpEffects | 1.12 | [garyttierney/elden-ring-param-archive](https://github.com/garyttierney/elden-ring-param-archive) |
 | `bosses` (26 bosses) | community | Community DPS Calc spreadsheet |
 | NG+ scaling (`enemy_ng`, `ng_cycle`) | 1.12 | regulation SpEffectParam (area + 400 rows) and ClearCountCorrectParam |
+| Armor, talisman and weapon passives (`gear_passives`, `skill_subcats`) | 1.12 | resident SpEffects of EquipParamProtector / Accessory / Weapon; boosted attacks from ATK_SUB_CATEGORY |
 
 `ar()` and `catalyst_scaling()` match an independent engine ([Raed-Jani/soulslike-build-planner](https://github.com/Raed-Jani/soulslike-build-planner))
 with 0 mismatches over thousands of damage, status and spell-scaling checks. That verifies the math against community calculators, not against the game.
@@ -44,3 +45,13 @@ Not included: item and dialogue text, wiki-derived text, translation sheets, per
 - `enemies.res_madness` is unreliable.
 
 ELDEN RING and its game data belong to FromSoftware / Bandai Namco. Fan-made, non-commercial, not affiliated.
+
+### gear_passives
+
+One row per armor piece, talisman or weapon whose resident effect changes attack power or stats.
+PvE multiplier per damage type = AttackRate x AttackPowerRate x atkEnemyDmgCorrectRate.
+`applies` is the kind of attack it boosts: `any`, `charged`, `jump`, `guard_counter`, `chain_end`, `roar`, `skill`, `two_hand`,
+`roll_backstep`, `running`, `critical`, `mounted`, `skill_subcat` (specific skills; join `skill_subcats` on the sub-category),
+`spell` (one spell school: staves, seals, some armor) or `other` (arrows, pots, thrown weapons). Sub-category meanings were
+checked against talisman descriptions; Fire Knight skills (130) are named from item pages because their DLC rows are unnamed.
+

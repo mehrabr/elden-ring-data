@@ -38,6 +38,7 @@ CREATE OR REPLACE TABLE "enemies" AS FROM read_parquet('https://raw.githubuserco
 CREATE OR REPLACE TABLE "enemy_ng" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/enemy_ng.parquet');
 CREATE OR REPLACE TABLE "equip_load" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/equip_load.parquet');
 CREATE OR REPLACE TABLE "frames" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/frames.parquet');
+CREATE OR REPLACE TABLE "gear_passives" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/gear_passives.parquet');
 CREATE OR REPLACE TABLE "guard_buffs" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/guard_buffs.parquet');
 CREATE OR REPLACE TABLE "moveset_proxies" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/moveset_proxies.parquet');
 CREATE OR REPLACE TABLE "ng_cycle" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/ng_cycle.parquet');
@@ -49,6 +50,7 @@ CREATE OR REPLACE TABLE "reg_weapons" AS FROM read_parquet('https://raw.githubus
 CREATE OR REPLACE TABLE "scadutree" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/scadutree.parquet');
 CREATE OR REPLACE TABLE "scaling_graphs" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/scaling_graphs.parquet');
 CREATE OR REPLACE TABLE "shields" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/shields.parquet');
+CREATE OR REPLACE TABLE "skill_subcats" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/skill_subcats.parquet');
 CREATE OR REPLACE TABLE "spell_atk_116" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_atk_116.parquet');
 CREATE OR REPLACE TABLE "spell_hit_counts" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_hit_counts.parquet');
 CREATE OR REPLACE TABLE "spell_hits" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_hits.parquet');
