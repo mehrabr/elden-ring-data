@@ -61,6 +61,7 @@ CREATE OR REPLACE TABLE "weapon_buff_list" AS FROM read_parquet('https://raw.git
 CREATE OR REPLACE TABLE "weapon_buffable" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_buffable.parquet');
 CREATE OR REPLACE TABLE "weapon_efficiency" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_efficiency.parquet');
 CREATE OR REPLACE TABLE "weapon_poise" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_poise.parquet');
+CREATE OR REPLACE TABLE "weapon_skill" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_skill.parquet');
 CREATE OR REPLACE TABLE "weapon_weights" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_weights.parquet');
 CREATE OR REPLACE TABLE "weapons" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapons.parquet');
 -- then run sql/schema.sql (views and macros)
