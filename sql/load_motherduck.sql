@@ -40,6 +40,7 @@ CREATE OR REPLACE TABLE "equip_load" AS FROM read_parquet('https://raw.githubuse
 CREATE OR REPLACE TABLE "frames" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/frames.parquet');
 CREATE OR REPLACE TABLE "gear_passives" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/gear_passives.parquet');
 CREATE OR REPLACE TABLE "guard_buffs" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/guard_buffs.parquet');
+CREATE OR REPLACE TABLE "item_region" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/item_region.parquet');
 CREATE OR REPLACE TABLE "moveset_proxies" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/moveset_proxies.parquet');
 CREATE OR REPLACE TABLE "ng_cycle" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/ng_cycle.parquet');
 CREATE OR REPLACE TABLE "reg_aec" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_aec.parquet');
@@ -47,6 +48,7 @@ CREATE OR REPLACE TABLE "reg_base_attack" AS FROM read_parquet('https://raw.gith
 CREATE OR REPLACE TABLE "reg_scaling" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_scaling.parquet');
 CREATE OR REPLACE TABLE "reg_weapon_graph" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_weapon_graph.parquet');
 CREATE OR REPLACE TABLE "reg_weapons" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_weapons.parquet');
+CREATE OR REPLACE TABLE "region_tier" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/region_tier.parquet');
 CREATE OR REPLACE TABLE "scadutree" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/scadutree.parquet');
 CREATE OR REPLACE TABLE "scaling_graphs" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/scaling_graphs.parquet');
 CREATE OR REPLACE TABLE "shields" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/shields.parquet');
@@ -55,9 +57,11 @@ CREATE OR REPLACE TABLE "spell_atk_116" AS FROM read_parquet('https://raw.github
 CREATE OR REPLACE TABLE "spell_hit_counts" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_hit_counts.parquet');
 CREATE OR REPLACE TABLE "spell_hits" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_hits.parquet');
 CREATE OR REPLACE TABLE "spell_hits_legacy" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_hits_legacy.parquet');
+CREATE OR REPLACE TABLE "spell_school" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_school.parquet');
 CREATE OR REPLACE TABLE "spell_status" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_status.parquet');
 CREATE OR REPLACE TABLE "spells" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spells.parquet');
 CREATE OR REPLACE TABLE "sweet_spot" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/sweet_spot.parquet');
+CREATE OR REPLACE TABLE "synergy" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/synergy.parquet');
 CREATE OR REPLACE TABLE "weapon_ash_slot" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_ash_slot.parquet');
 CREATE OR REPLACE TABLE "weapon_buff_list" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_buff_list.parquet');
 CREATE OR REPLACE TABLE "weapon_buffable" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_buffable.parquet');
