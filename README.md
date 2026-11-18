@@ -83,7 +83,7 @@ hand-listed English and Japanese terms (`lang` = en, ja or both; `ja` means only
 
 The strong attacks that War Cry, Barbaric Roar and Braggart's Roar swap in, per weapon class and grip (regulation 1.12
 AtkParam_Pc): motion value, poise and stamina multipliers, and `roar_tag` (ATK_SUB_CATEGORY 106, what Roar Medallion and
-Highland Axe boost). Which rows belong to which skill is inferred from the row layout, not named in the game files.
+Highland Axe boost). Skill names per row follow the community frame sheet (corrected 2026-11-18: an earlier export had War Cry and Barbaric Roar swapped). Braggart's Roar uses the War Cry attacks.
 
 ### spell_subcats
 
