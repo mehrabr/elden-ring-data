@@ -53,6 +53,7 @@ CREATE OR REPLACE TABLE "reg_scaling" AS FROM read_parquet('https://raw.githubus
 CREATE OR REPLACE TABLE "reg_weapon_graph" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_weapon_graph.parquet');
 CREATE OR REPLACE TABLE "reg_weapons" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_weapons.parquet');
 CREATE OR REPLACE TABLE "region_tier" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/region_tier.parquet');
+CREATE OR REPLACE TABLE "roar_heavies" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/roar_heavies.parquet');
 CREATE OR REPLACE TABLE "scadutree" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/scadutree.parquet');
 CREATE OR REPLACE TABLE "scaling_graphs" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/scaling_graphs.parquet');
 CREATE OR REPLACE TABLE "shields" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/shields.parquet');

@@ -3,7 +3,7 @@
 Game-data tables and SQL macros for Elden Ring PvE build theorycrafting: weapon attack rating, motion values,
 frame data, stance (poise) damage, status buildup, enemy defenses and thresholds, spells, Ashes of War, buffs, armor.
 
-- `data/*.parquet`: 75 tables (zstd Parquet, ~2 MB total)
+- `data/*.parquet`: 76 tables (zstd Parquet, ~2 MB total)
 - `sql/schema.sql`: 41 macros and views (`ar`, `catalyst_scaling`, `enemy_hit_damage`, `hits_for_procs`, `enemy_threshold`, `class_rl`, …), in dependency order
 - `sql/schema_elden_ring_qualified.sql`: the same macros with every table and macro call qualified as `elden_ring.main.*`, so they work from any default database (needed for MotherDuck Dives)
 - `sql/load_motherduck.sql`: builds the tables in MotherDuck straight from this repo's raw URLs
@@ -78,3 +78,9 @@ and spirit ashes have none). `lore_mention`: which places, figures, factions and
 hand-listed English and Japanese terms (`lang` = en, ja or both; `ja` means only the Japanese text names it). `lore_region`:
 22 map regions with a schematic x,y layout (not game coordinates). `lore_link`: item pairs that share rare Japanese terms
 (`hidden` = the English text does not show the link). The descriptions themselves are not included.
+
+### roar_heavies
+
+The strong attacks that War Cry, Barbaric Roar and Braggart's Roar swap in, per weapon class and grip (regulation 1.12
+AtkParam_Pc): motion value, poise and stamina multipliers, and `roar_tag` (ATK_SUB_CATEGORY 106, what Roar Medallion and
+Highland Axe boost). Which rows belong to which skill is inferred from the row layout, not named in the game files.
