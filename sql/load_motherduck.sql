@@ -41,6 +41,10 @@ CREATE OR REPLACE TABLE "frames" AS FROM read_parquet('https://raw.githubusercon
 CREATE OR REPLACE TABLE "gear_passives" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/gear_passives.parquet');
 CREATE OR REPLACE TABLE "guard_buffs" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/guard_buffs.parquet');
 CREATE OR REPLACE TABLE "item_region" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/item_region.parquet');
+CREATE OR REPLACE TABLE "lore_item" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/lore_item.parquet');
+CREATE OR REPLACE TABLE "lore_link" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/lore_link.parquet');
+CREATE OR REPLACE TABLE "lore_mention" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/lore_mention.parquet');
+CREATE OR REPLACE TABLE "lore_region" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/lore_region.parquet');
 CREATE OR REPLACE TABLE "moveset_proxies" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/moveset_proxies.parquet');
 CREATE OR REPLACE TABLE "ng_cycle" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/ng_cycle.parquet');
 CREATE OR REPLACE TABLE "reg_aec" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_aec.parquet');

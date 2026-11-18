@@ -3,7 +3,7 @@
 Game-data tables and SQL macros for Elden Ring PvE build theorycrafting: weapon attack rating, motion values,
 frame data, stance (poise) damage, status buildup, enemy defenses and thresholds, spells, Ashes of War, buffs, armor.
 
-- `data/*.parquet`: 71 tables (zstd Parquet, ~2 MB total)
+- `data/*.parquet`: 75 tables (zstd Parquet, ~2 MB total)
 - `sql/schema.sql`: 41 macros and views (`ar`, `catalyst_scaling`, `enemy_hit_damage`, `hits_for_procs`, `enemy_threshold`, `class_rl`, …), in dependency order
 - `sql/schema_elden_ring_qualified.sql`: the same macros with every table and macro call qualified as `elden_ring.main.*`, so they work from any default database (needed for MotherDuck Dives)
 - `sql/load_motherduck.sql`: builds the tables in MotherDuck straight from this repo's raw URLs
@@ -70,3 +70,11 @@ Armour is not covered. Region names are credited to game-checklists.com.
 `synergy`: one row per "source boosts target" link (source item or buff, slot, relation `boosts` or `grants_stat`, target kind
 attack / damage_type / skill / stat / spell_school / spell_type, magnitude, trigger, condition, scope). `spell_school` maps
 123 spells to the school that gear boosts.
+
+### Lore map (lore_region, lore_item, lore_mention, lore_link)
+
+Tags, not text. `lore_item`: 2,638 described items with the region they are found in (from `item_region`; armour, key items
+and spirit ashes have none). `lore_mention`: which places, figures, factions and powers each description names, matched by
+hand-listed English and Japanese terms (`lang` = en, ja or both; `ja` means only the Japanese text names it). `lore_region`:
+22 map regions with a schematic x,y layout (not game coordinates). `lore_link`: item pairs that share rare Japanese terms
+(`hidden` = the English text does not show the link). The descriptions themselves are not included.
