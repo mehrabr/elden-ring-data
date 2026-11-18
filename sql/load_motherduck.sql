@@ -64,6 +64,7 @@ CREATE OR REPLACE TABLE "spell_hits" AS FROM read_parquet('https://raw.githubuse
 CREATE OR REPLACE TABLE "spell_hits_legacy" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_hits_legacy.parquet');
 CREATE OR REPLACE TABLE "spell_school" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_school.parquet');
 CREATE OR REPLACE TABLE "spell_status" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_status.parquet');
+CREATE OR REPLACE TABLE "spell_subcats" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_subcats.parquet');
 CREATE OR REPLACE TABLE "spells" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spells.parquet');
 CREATE OR REPLACE TABLE "sweet_spot" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/sweet_spot.parquet');
 CREATE OR REPLACE TABLE "synergy" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/synergy.parquet');
