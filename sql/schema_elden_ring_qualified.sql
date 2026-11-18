@@ -1,6 +1,6 @@
 CREATE OR REPLACE MACRO elden_ring.main.attack_poise (cls, weapon_name, atk_name) AS ((SELECT ((sum(h.poise_mv) / 100.0) * w.base_poise_dmg) FROM (elden_ring.main.attack_hits AS h INNER JOIN elden_ring.main.weapon_poise AS w ON (((w."class" = h."class") AND (w.weapon = h.weapon)))) WHERE ((h."class" = cls) AND (h.weapon = weapon_name) AND (h.attack = atk_name)) GROUP BY w.base_poise_dmg));
 
-CREATE OR REPLACE MACRO elden_ring.main.bleed_proc (boss_name, flat) AS ((SELECT ((flat + (0.15 * hp)) * mult_bleed) FROM elden_ring.main.bosses WHERE (boss = boss_name)));
+CREATE OR REPLACE MACRO elden_ring.main.bleed_proc (boss_name, flat) AS ((SELECT (flat + ((0.15 * hp) * mult_bleed)) FROM elden_ring.main.bosses WHERE (boss = boss_name)));
 
 CREATE OR REPLACE MACRO elden_ring.main.blocked_damage (incoming, negation_pct, extra_cut) AS (((incoming * (1 - (negation_pct / 100.0))) * extra_cut));
 
@@ -20,7 +20,7 @@ CREATE OR REPLACE MACRO elden_ring.main.class_rl (cls, p_vig, p_mnd, p_end, p_st
 
 CREATE OR REPLACE MACRO elden_ring.main.defense_mult (atk, def) AS (CASE  WHEN ((def <= 0)) THEN (1.0) WHEN (((atk / def) >= 8)) THEN (0.9) WHEN (((atk / def) >= 2.5)) THEN ((0.9 - (0.2 * pow(((8 - (atk / def)) / 5.5), 2)))) WHEN (((atk / def) >= 1)) THEN ((0.7 - (0.3 * pow(((2.5 - (atk / def)) / 1.5), 2)))) WHEN (((atk / def) >= 0.125)) THEN ((0.1 + (0.3 * pow((((atk / def) - 0.125) / 0.875), 2)))) ELSE 0.1 END);
 
-CREATE OR REPLACE MACRO elden_ring.main.enemy_bleed_proc (enemy_label, flat) AS ((SELECT ((flat + (0.15 * hp)) * mult_bleed) FROM elden_ring.main.enemies WHERE ("label" = enemy_label)));
+CREATE OR REPLACE MACRO elden_ring.main.enemy_bleed_proc (enemy_label, flat) AS ((SELECT (flat + ((0.15 * hp) * mult_bleed)) FROM elden_ring.main.enemies WHERE ("label" = enemy_label)));
 
 CREATE OR REPLACE MACRO elden_ring.main.enemy_hit_damage (atk_by_type, enemy_label, phys_kind, blessing) AS ((SELECT (sum(((t.atk * elden_ring.main.defense_mult(t.atk, CASE  WHEN ((t.k = 'physical')) THEN (e.def_phys) WHEN ((t.k = 'magic')) THEN (e.def_magic) WHEN ((t.k = 'fire')) THEN (e.def_fire) WHEN ((t.k = 'lightning')) THEN (e.def_lightning) ELSE e.def_holy END)) * (1 - (CASE  WHEN ((t.k = 'physical')) THEN (CASE  WHEN ((phys_kind = 'strike')) THEN (e.neg_strike) WHEN ((phys_kind = 'slash')) THEN (e.neg_slash) WHEN ((phys_kind = 'pierce')) THEN (e.neg_pierce) ELSE e.neg_standard END) WHEN ((t.k = 'magic')) THEN (e.neg_magic) WHEN ((t.k = 'fire')) THEN (e.neg_fire) WHEN ((t.k = 'lightning')) THEN (e.neg_lightning) ELSE e.neg_holy END / 100.0)))) * (SELECT dmg_mult FROM elden_ring.main.scadutree WHERE ("level" = blessing))) FROM (SELECT unnest(map_keys(atk_by_type)) AS k, unnest(map_values(atk_by_type)) AS atk) AS t , elden_ring.main.enemies AS e WHERE ((e."label" = enemy_label) AND (t.k IN ('physical', 'magic', 'fire', 'lightning', 'holy')))));
 
