@@ -3,7 +3,7 @@
 Game-data tables and SQL macros for Elden Ring PvE build theorycrafting: weapon attack rating, motion values,
 frame data, stance (poise) damage, status buildup, enemy defenses and thresholds, spells, Ashes of War, buffs, armor.
 
-- `data/*.parquet`: 77 tables (zstd Parquet, ~2 MB total)
+- `data/*.parquet`: 80 tables (zstd Parquet, ~2 MB total)
 - `sql/schema.sql`: 41 macros and views (`ar`, `catalyst_scaling`, `enemy_hit_damage`, `hits_for_procs`, `enemy_threshold`, `class_rl`, …), in dependency order
 - `sql/schema_elden_ring_qualified.sql`: the same macros with every table and macro call qualified as `elden_ring.main.*`, so they work from any default database (needed for MotherDuck Dives)
 - `sql/load_motherduck.sql`: builds the tables in MotherDuck straight from this repo's raw URLs
@@ -88,3 +88,10 @@ Highland Axe boost). Skill names per row follow the community frame sheet (corre
 ### spell_subcats
 
 Every sub-category Magic.param (1.12) gives each player spell. `spell_school` now carries a spell's second school where the game gives one (12 spells), and a Magma school (sub-category 123).
+
+### punish_window / punish_window_weapon / swing_reward
+
+What a weapon can land inside an opening of N frames (20-120, 30 fps) and still roll out: the best of R1 x k or one charged R2,
+using only frame rows timed from the button press. `punish_window` is the class median, `punish_window_weapon` the per-weapon
+rows, `swing_reward` how much motion value per second a class gains by committing to its string instead of single swings.
+Left out: stamina, reach, whether later swings connect, running / rolling / jumping openers, skills.

@@ -47,6 +47,8 @@ CREATE OR REPLACE TABLE "lore_mention" AS FROM read_parquet('https://raw.githubu
 CREATE OR REPLACE TABLE "lore_region" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/lore_region.parquet');
 CREATE OR REPLACE TABLE "moveset_proxies" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/moveset_proxies.parquet');
 CREATE OR REPLACE TABLE "ng_cycle" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/ng_cycle.parquet');
+CREATE OR REPLACE TABLE "punish_window" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/punish_window.parquet');
+CREATE OR REPLACE TABLE "punish_window_weapon" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/punish_window_weapon.parquet');
 CREATE OR REPLACE TABLE "reg_aec" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_aec.parquet');
 CREATE OR REPLACE TABLE "reg_base_attack" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_base_attack.parquet');
 CREATE OR REPLACE TABLE "reg_scaling" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/reg_scaling.parquet');
@@ -67,6 +69,7 @@ CREATE OR REPLACE TABLE "spell_status" AS FROM read_parquet('https://raw.githubu
 CREATE OR REPLACE TABLE "spell_subcats" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spell_subcats.parquet');
 CREATE OR REPLACE TABLE "spells" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/spells.parquet');
 CREATE OR REPLACE TABLE "sweet_spot" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/sweet_spot.parquet');
+CREATE OR REPLACE TABLE "swing_reward" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/swing_reward.parquet');
 CREATE OR REPLACE TABLE "synergy" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/synergy.parquet');
 CREATE OR REPLACE TABLE "weapon_ash_slot" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_ash_slot.parquet');
 CREATE OR REPLACE TABLE "weapon_buff_list" AS FROM read_parquet('https://raw.githubusercontent.com/mehrabr/elden-ring-data/main/data/weapon_buff_list.parquet');
